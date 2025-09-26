@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #0D141C;
+
+}
+
+body {
+    background: #F7FAFC;
+    font-family: "Inter", sans-serif;
+    color: #0D141C;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    gap: 100px;
+    margin: 0px 20px;
+}
+
+#sideBar {
+    background: #F7FAFC;
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    padding: 20px;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.main{
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+#sideBar h4 {
+    justify-items:  baseline;
+    margin: 25px 0 20px;
+    font-weight: 500;
+}
+
+#sideBar ul li {
+    list-style-type: none;
+}
+
+
+#sideBar a {
+    align-items: center;
+    border-radius: 6px;
+    display: flex;
+    font-weight: 500;
+    font-size: 14px;
+    gap: 12px;
+    text-decoration: none;
+    padding:8px 12px;
+    width: 50vh;
+    
+}
+
+
+#sideBar a:hover {
+    background-color: #E8EDF2;
+}
+
+/* MAIN SECTION */
+.main h1 {
+    margin: 10px 0 20px;
+}
+
+.input-box{
+    background-color: #F7FAFC;
+    border: 1px solid #CFDBE8;
+    border-radius: 6px; 
+    font-size: 18px;
+    padding: 18px 20px;  
+    outline: none;   
+    width: 80vh;
+    max-width: 500px;
+}
+
+.input-box::placeholder {
+  color: #4D7399;  
+  font-size: 16px;
+
+}
+
+#sideBar button {
+    border: none;
+    border-radius: 5px;
+    background-color: #1280ED;
+    color: #F7FAFC;
+    padding: 8px;
+    cursor: pointer;
+}
+    
+#addTaskBtn {
+    flex: 1;
+    background: #1280ED;  
+    color: white;          
+    padding: 0px 10px;
+    border-radius: 8px;
+    border: none;
+    margin-left: 8px;
+    height: 8%;              
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  
+}
+
+.taskLists {
+   list-style-type: none;
+   margin-top: 20px;
+}
+
+.taskLists li {
+     display: flex;
+   align-items: center;
+   justify-content: space-between;   
+
+}
+
+.taskCheck{
+    margin-right: 10px;
+
+}
+
+input[type='checkbox'] {
+    accent-color: #CFDBE8; 
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+
+.taskText {
+    font-weight: 550;
+}
+
+.taskActions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 30px; /* space between icons */
+}
+
+.taskActions img {
+    width: 18px;   /* reduce size */
+    height: 18px;  /* keep square */
+}
+
+.taskContent {
+    display: flex;
+    align-items: center; /* aligns checkbox + text vertically */
+    gap: 8px;            /* space between checkbox and text */
+}
+
+
+.taskLists li {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start; 
+   margin-bottom: 12px; 
+}
+
+.taskMain {
+   display: flex;
+   justify-content: space-between;
+   width: 100%; /* spread task text and actions */
+}
+
+.dueDate {
+   margin-left: 35px; 
+   margin-top: 4px;
+   font-size: 14px;
+  
+}
+
+.due{
+    color: #4D7399;
+}
+
+.editInput {
+    font-size: 16px;          
+    color: #0D141C;           
+    border: 1px solid #1280ED; 
+    background-color: #FFFFFF; 
+    padding: 6px 10px;         
+    outline: none;             
+    width: 70%;                
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08); 
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+
+.editInput:focus {
+    border: 1px solid #0B63C5; 
+    box-shadow: 0 0 4px rgba(18,128,237,0.4);
+}
+
+
+
+
+@media (max-width: 900px) {
+    .container {
+        gap: 20px;
+    }
+
+    #sideBar {
+        width: 200px;
+    }
+
+    .input-box {
+        max-width: 400px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* stack sidebar on top */
+        height: auto;
+    }
+
+    #sideBar {
+        width: 100%;
+        flex-direction: row;    /* make sidebar horizontal */
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    #sideBar ul {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .main {
+        padding: 15px;
+    }
+
+    .input-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .taskActions {
+        gap: 8px;
+    }
+}
